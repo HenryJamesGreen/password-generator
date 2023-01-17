@@ -98,61 +98,77 @@ let userOptions = [
 let passwordchoices = [];
 let passwordLength = [];
 
-// Function to prompt user for password options
+// Function to prompt user for password options.
+// options are pushed to passwordChoices array.
 function getPasswordOptions() {
   let passwordLength = parseInt(prompt("Please specify password length 10-64"));
 
   if (passwordLength >= 10 && passwordLength <= 64) {
     passwordchoices.push(passwordLength);
-    let userTellSpec = confirm("Would you like to use special characters?");
+    let userTellSpec = confirm(
+      "Would you like to use special characters? Click 'Ok' for yes and 'cancel' for no."
+    );
     if (userTellSpec === true) {
       passwordchoices.push(specialCharacters);
     }
-    let userTellUp = confirm("Would you like to use upper case characters?");
+    let userTellUp = confirm(
+      "Would you like to use upper case characters? Click 'Ok' for yes and 'cancel' for no."
+    );
     if (userTellUp === true) {
       passwordchoices.push(upperCasedCharacters);
     }
-    let userTellDo = confirm("Would you like to use lower case characters?");
+    let userTellDo = confirm(
+      "Would you like to use lower case characters? Click 'Ok' for yes and 'cancel' for no."
+    );
     if (userTellDo === true) {
       passwordchoices.push(lowerCasedCharacters);
     }
-    let userTellNum = confirm("Would you like to use numeric characters?");
+    let userTellNum = confirm(
+      "Would you like to use numeric characters? Click 'Ok' for yes and 'cancel' for no."
+    );
     if (userTellNum === true) {
       passwordchoices.push(numericCharacters);
     }
-  } else alert("try again");
+  } else alert("Refresh to try again");
 
   return userOptions;
 }
 
+//calls function
 getPasswordOptions();
-console.log(passwordchoices[0]);
-console.log(passwordchoices);
 
+//checks to see if choices have been logged properly
+//console.log(passwordchoices[0]);
+//console.log(passwordchoices);
+
+// create new variable out of paswordChoices[0] - (password length) - to avoid confusion later.
 let charCount = passwordchoices[0];
-console.log(charCount);
-
+//checks if working.
+//console.log(charCount);
+//now on to create new array, by concating the remaining choices together.
 let choice1 = passwordchoices[1];
 let choice2 = passwordchoices[2];
 let choice3 = passwordchoices[3];
 let choice4 = passwordchoices[4];
 let joinedArray = choice1.concat(choice2, choice3, choice4);
-
-console.log(joinedArray);
+//deletes undefined and returns a new array called finalCharacterChoice
+// check joinedArray
+//console.log(joinedArray);
 let finalCharacterChoice = joinedArray.filter(function (element) {
   return element !== undefined;
 });
-console.log(finalCharacterChoice);
+//check to see if working
+//console.log(finalCharacterChoice);
 
 // Function for getting a random element from an array
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * finalCharacterChoice.length)];
 }
 
-console.log(getRandom(finalCharacterChoice));
+//check to see if function is working
+//console.log(getRandom(finalCharacterChoice));
 
-// Function to generate password with user input
-
+// Function to generate password with user input. Running for loop for the length specified in CharCount.
 function generatePassword() {
   for (i = 0; i < charCount; i++) {
     password += getRandom(finalCharacterChoice);
@@ -162,9 +178,8 @@ function generatePassword() {
 
 let password = [];
 generatePassword();
-console.log(password);
-
-//console.log(passwordPre);
+//check to see if working
+//console.log(password);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
