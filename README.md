@@ -9,7 +9,7 @@ This project can be used as a tool to generate a random password for the user, u
 
 The end result (a randomised password generated within above mentioned parameters) is then created by the click of a button.
 
-(![](screesnhot-pg.png) )
+![](screesnhot-pg.png) 
 
 ## Installation
 
