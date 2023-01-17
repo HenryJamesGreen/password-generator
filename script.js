@@ -119,7 +119,8 @@ function getPasswordOptions() {
     if (userTellNum === true) {
       passwordchoices.push(numericCharacters);
     }
-  }
+  } else alert("try again");
+
   return userOptions;
 }
 
