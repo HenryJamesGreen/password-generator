@@ -132,6 +132,18 @@ console.log(passwordchoices);
 let charCount = passwordchoices[0];
 console.log(charCount);
 
+let choice1 = passwordchoices[1];
+let choice2 = passwordchoices[2];
+let choice3 = passwordchoices[3];
+let choice4 = passwordchoices[4];
+let joinedArray = choice1.concat(choice2, choice3, choice4);
+
+console.log(joinedArray);
+let finalCharacterChoice = joinedArray.filter(function (element) {
+  return element !== undefined;
+});
+console.log(finalCharacterChoice);
+
 // Function for getting a random element from an array
 function getRandom(arr) {}
 
