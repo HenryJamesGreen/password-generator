@@ -148,7 +148,16 @@ console.log(finalCharacterChoice);
 function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {}
+
+function generatePassword(passwordPre) {
+  for (let i = 0; i < charCount; i++) {
+    let random = Math.floor(Math.random() * finalCharacterChoice);
+    passwordPre = random + finalCharacterChoice;
+  }
+  return passwordPre;
+}
+
+console.log(passwordPre);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
