@@ -145,19 +145,16 @@ let finalCharacterChoice = joinedArray.filter(function (element) {
 console.log(finalCharacterChoice);
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
-
-// Function to generate password with user input
-
-function generatePassword(passwordPre) {
-  for (let i = 0; i < charCount; i++) {
-    let random = Math.floor(Math.random() * finalCharacterChoice);
-    passwordPre = random + finalCharacterChoice;
-  }
-  return passwordPre;
+function getRandom() {
+  return finalCharacterChoice[Math.floor(Math.random() * finalCharacterChoice.length)];
 }
 
-console.log(passwordPre);
+console.log(getRandom(finalCharacterChoice));
+// Function to generate password with user input
+
+function generatePassword() {}
+
+//console.log(passwordPre);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
