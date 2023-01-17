@@ -95,14 +95,15 @@ let userOptions = [
   numericCharacters,
 ];
 
-let passwordLength = [];
 let passwordchoices = [];
+let passwordLength = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
   let passwordLength = parseInt(prompt("Please specify password length 10-64"));
 
   if (passwordLength >= 10 && passwordLength <= 64) {
+    passwordchoices.push(passwordLength);
     let userTellSpec = confirm("Would you like to use special characters?");
     if (userTellSpec === true) {
       passwordchoices.push(specialCharacters);
@@ -125,7 +126,11 @@ function getPasswordOptions() {
 }
 
 getPasswordOptions();
+console.log(passwordchoices[0]);
 console.log(passwordchoices);
+
+let charCount = passwordchoices[0];
+console.log(charCount);
 
 // Function for getting a random element from an array
 function getRandom(arr) {}
