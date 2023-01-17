@@ -160,6 +160,7 @@ function generatePassword() {
   return password;
 }
 
+let password = []
 generatePassword();
 console.log(password);
 
